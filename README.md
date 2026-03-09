@@ -1,16 +1,45 @@
-# tictactoe
+# Tic Tac Toe
 
-A new Flutter project.
+A Flutter implementation of the classic Tic Tac Toe game, built as a technical test to show clean architecture, state management and good practices.
 
-## Getting Started
+## Dependencies 
 
-This project is a starting point for a Flutter application.
+- **Flutter** 3.41.1 with FVM
+- **Riverpod** — state management and dependency injection
+- **GoRouter** — navigation
+- **Freezed** — immutable entities
+- **SharedPreferences** — local persistence
+- **json_serializable** — JSON serialization
 
-A few resources to get you started if this is your first Flutter project:
+## Game modes
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+The game has two difficulty levels against the AI.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+**Easy** — the AI picks a random empty cell.
+
+**Hard** — the AI uses the Minimax algorithm, which explores all possible moves and always plays the best one.
+
+## Getting started
+
+This project uses FVM to manage the Flutter version.
+```bash
+fvm flutter pub get
+fvm dart run build_runner build --delete-conflicting-outputs
+fvm flutter run
+```
+
+## Tests
+
+Unit tests cover only main use cases — `CheckWinnerUsecase` and `MakeMoveUsecase` — and a widget test for `BoardWidget`.
+
+## What I would add with more time
+
+- l10n
+- Game history
+- Win counter
+- Select first player
+- Change tile symbol (X:O)
+- Human vs Human
+- Animations with flutter_animate / rive
+- More test coverage
+- and a lot more
