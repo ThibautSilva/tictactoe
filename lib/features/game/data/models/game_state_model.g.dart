@@ -6,8 +6,8 @@ part of 'game_state_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-GameStateModel _$GameStateModelFromJson(Map<String, dynamic> json) =>
-    GameStateModel(
+_GameStateModel _$GameStateModelFromJson(Map<String, dynamic> json) =>
+    _GameStateModel(
       board: (json['board'] as List<dynamic>).map((e) => e as String).toList(),
       currentTile: json['currentTile'] as String,
       firstPlayerTile: json['firstPlayerTile'] as String,
@@ -17,7 +17,7 @@ GameStateModel _$GameStateModelFromJson(Map<String, dynamic> json) =>
       gameMode: json['gameMode'] as String,
     );
 
-Map<String, dynamic> _$GameStateModelToJson(GameStateModel instance) =>
+Map<String, dynamic> _$GameStateModelToJson(_GameStateModel instance) =>
     <String, dynamic>{
       'board': instance.board,
       'currentTile': instance.currentTile,
